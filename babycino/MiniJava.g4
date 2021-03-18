@@ -47,6 +47,7 @@ expression :
   | 'this'     # ExpThis
   | 'new' 'int' '[' expression ']' # ExpNewArray
   | 'new' identifier '(' ')'       # ExpNewObject
+  | expression ( '>=' ) expression                                         # ExpBinOp
   ;
 
 identifier :
@@ -60,5 +61,3 @@ ALNUM : ALPHA | [0-9];
 
 WS : [ \t\r\n]+ -> skip ;
 COMMENT : '//' ~[\r\n]* -> skip ;
-
-
