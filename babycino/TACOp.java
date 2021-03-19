@@ -35,7 +35,7 @@ public class TACOp {
     public String getR1() {
         return this.r1;
     }
-    
+
     public String getR2() {
         return this.r2;
     }
@@ -43,17 +43,17 @@ public class TACOp {
     public String getR3() {
         return this.r3;
     }
-    
+
     public String getLabel() {
         return this.label;
     }
-    
+
     public int getN() {
         return this.n;
     }
 
     // Convenience static factory methods to return TACOps of a specific type:
-    
+
     public static TACOp mov(String r1, String r2) {
         return new TACOp(TACOpType.MOV, r1, r2, null, null, 0);
     }
@@ -61,7 +61,7 @@ public class TACOp {
     public static TACOp immed(String r1, int n) {
         return new TACOp(TACOpType.IMMED, r1, null, null, null, n);
     }
-    
+
     public static TACOp load(String r1, String r2) {
         return new TACOp(TACOpType.LOAD, r1, r2, null, null, 0);
     }
@@ -90,16 +90,16 @@ public class TACOp {
 
     public static TACOp param(String r1) {
         return new TACOp(TACOpType.PARAM, r1, null, null, null, 0);
-    }
+    }eturn
 
     public static TACOp call(String r1) {
         return new TACOp(TACOpType.CALL, r1, null, null, null, 0);
     }
-    
+
     public static TACOp ret() {
         return new TACOp(TACOpType.RET, null, null, null, null, 0);
     }
-    
+
     public static TACOp label(String label) {
         return new TACOp(TACOpType.LABEL, null, null, null, label, 0);
     }
@@ -127,7 +127,7 @@ public class TACOp {
     public static TACOp addrof(String r1, String label) {
         return new TACOp(TACOpType.ADDROF, r1, null, null, label, 0);
     }
-    
+
     public static TACOp nop() {
         return new TACOp(TACOpType.NOP, null, null, null, null, 0);
     }
@@ -145,8 +145,10 @@ public class TACOp {
                 return 2;
             case "*":
                 return 3;
-            case "offset":
+            case ">=":
                 return 4;
+            case "offset":
+                return 5;
             default:
                 throw new IllegalArgumentException();
         }
@@ -163,13 +165,15 @@ public class TACOp {
             case 3:
                 return "*";
             case 4:
+                return ">=";
+            case 5:
                 return "offset";
             default:
                 throw new IllegalArgumentException();
         }
     }
 
-    // Pretty-print TACOps.    
+    // Pretty-print TACOps.
     public String toString() {
         switch (this.type) {
             case MOV:
@@ -210,4 +214,3 @@ public class TACOp {
     }
 
 }
-

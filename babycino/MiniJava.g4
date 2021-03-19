@@ -48,6 +48,7 @@ expression :
   | 'new' 'int' '[' expression ']' # ExpNewArray
   | 'new' identifier '(' ')'       # ExpNewObject
   | expression ( '>=' ) expression                                         # ExpBinOp
+  | expression ( '+=' ) expression                                         # ExpBinOp
   ;
 
 identifier :
