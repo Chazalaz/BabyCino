@@ -111,6 +111,13 @@ public interface MiniJavaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStmtArrayAssign(MiniJavaParser.StmtArrayAssignContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code StmtAdd}
+	 * labeled alternative in {@link MiniJavaParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStmtAdd(MiniJavaParser.StmtAddContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code ExpConstTrue}
 	 * labeled alternative in {@link MiniJavaParser#expression}.
 	 * @param ctx the parse tree

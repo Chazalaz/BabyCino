@@ -178,6 +178,18 @@ public interface MiniJavaListener extends ParseTreeListener {
 	 */
 	void exitStmtArrayAssign(MiniJavaParser.StmtArrayAssignContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code StmtAdd}
+	 * labeled alternative in {@link MiniJavaParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterStmtAdd(MiniJavaParser.StmtAddContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code StmtAdd}
+	 * labeled alternative in {@link MiniJavaParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitStmtAdd(MiniJavaParser.StmtAddContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code ExpConstTrue}
 	 * labeled alternative in {@link MiniJavaParser#expression}.
 	 * @param ctx the parse tree

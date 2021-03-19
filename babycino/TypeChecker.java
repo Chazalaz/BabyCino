@@ -114,6 +114,15 @@ public class TypeChecker extends MiniJavaBaseListener {
     }
 
     @Override
+    public void exitStmtAdd(MiniJavaParser.StmtAddContext ctx){
+        Type lhs = this.identifierType(ctx.identifier());
+        Type rhs = this.types.pop();
+        this.check(lhs.isInt(), ctx, "Expected identifier of expression to be int; actual type: " + lhs);
+        this.check(lhs.compatibleWith(rhs), ctx, "Assignment of value of type "
+            + rhs + " to variable of incompatible type " + lhs);
+    }
+
+    @Override
     public void exitStmtArrayAssign(MiniJavaParser.StmtArrayAssignContext ctx) {
         Type lhs = this.identifierType(ctx.identifier());
         Type rhs = this.types.pop();

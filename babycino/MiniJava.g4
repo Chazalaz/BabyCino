@@ -28,6 +28,7 @@ statement :
   | 'System.out.println' '(' expression ')' ';'        # StmtPrint
   | identifier '=' expression ';'                      # StmtAssign
   | identifier '[' expression ']' '=' expression ';'   # StmtArrayAssign
+  | identifier '+=' expression ';'                     # StmtAdd
   ;
 
 expression :
@@ -48,7 +49,6 @@ expression :
   | 'new' 'int' '[' expression ']' # ExpNewArray
   | 'new' identifier '(' ')'       # ExpNewObject
   | expression ( '>=' ) expression                                         # ExpBinOp
-  | expression ( '+=' ) expression                                         # ExpBinOp
   ;
 
 identifier :
