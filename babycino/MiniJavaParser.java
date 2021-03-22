@@ -41,7 +41,7 @@ public class MiniJavaParser extends Parser {
 			"'String'", "'['", "']'", "')'", "'}'", "'extends'", "';'", "','", "'return'", 
 			"'int'", "'boolean'", "'if'", "'else'", "'while'", "'System.out.println'", 
 			"'='", "'+='", "'.'", "'length'", "'!'", "'*'", "'+'", "'-'", "'<'", 
-			"'&&'", "'true'", "'false'", "'this'", "'new'", "'>='"
+			"'>='", "'&&'", "'true'", "'false'", "'this'", "'new'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -1324,7 +1324,7 @@ public class MiniJavaParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(168);
-				match(T__32);
+				match(T__33);
 				}
 				break;
 			case 5:
@@ -1333,7 +1333,7 @@ public class MiniJavaParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(169);
-				match(T__33);
+				match(T__34);
 				}
 				break;
 			case 6:
@@ -1351,7 +1351,7 @@ public class MiniJavaParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(171);
-				match(T__34);
+				match(T__35);
 				}
 				break;
 			case 8:
@@ -1360,7 +1360,7 @@ public class MiniJavaParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(172);
-				match(T__35);
+				match(T__36);
 				setState(173);
 				match(T__16);
 				setState(174);
@@ -1377,7 +1377,7 @@ public class MiniJavaParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(178);
-				match(T__35);
+				match(T__36);
 				setState(179);
 				identifier();
 				setState(180);
@@ -1466,13 +1466,13 @@ public class MiniJavaParser extends Parser {
 						_localctx = new ExpBinOpContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(197);
-						if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
+						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
 						{
 						setState(198);
-						match(T__36);
+						match(T__32);
 						}
 						setState(199);
-						expression(2);
+						expression(9);
 						}
 						break;
 					case 6:
@@ -1516,7 +1516,7 @@ public class MiniJavaParser extends Parser {
 						setState(220);
 						_errHandler.sync(this);
 						_la = _input.LA(1);
-						if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__6) | (1L << T__26) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << INT) | (1L << IDENT))) != 0)) {
+						if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__6) | (1L << T__26) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << INT) | (1L << IDENT))) != 0)) {
 							{
 							setState(212);
 							expression(0);
@@ -1623,7 +1623,7 @@ public class MiniJavaParser extends Parser {
 		case 3:
 			return precpred(_ctx, 9);
 		case 4:
-			return precpred(_ctx, 1);
+			return precpred(_ctx, 8);
 		case 5:
 			return precpred(_ctx, 17);
 		case 6:
@@ -1686,9 +1686,9 @@ public class MiniJavaParser extends Parser {
 		"\2\2\u00a0\u009b\3\2\2\2\u00a1\17\3\2\2\2\u00a2\u00a3\b\t\1\2\u00a3\u00a4"+
 		"\7\t\2\2\u00a4\u00a5\5\20\t\2\u00a5\u00a6\7\r\2\2\u00a6\u00ba\3\2\2\2"+
 		"\u00a7\u00a8\7\35\2\2\u00a8\u00ba\5\20\t\17\u00a9\u00ba\7(\2\2\u00aa\u00ba"+
-		"\7#\2\2\u00ab\u00ba\7$\2\2\u00ac\u00ba\5\22\n\2\u00ad\u00ba\7%\2\2\u00ae"+
-		"\u00af\7&\2\2\u00af\u00b0\7\23\2\2\u00b0\u00b1\7\13\2\2\u00b1\u00b2\5"+
-		"\20\t\2\u00b2\u00b3\7\f\2\2\u00b3\u00ba\3\2\2\2\u00b4\u00b5\7&\2\2\u00b5"+
+		"\7$\2\2\u00ab\u00ba\7%\2\2\u00ac\u00ba\5\22\n\2\u00ad\u00ba\7&\2\2\u00ae"+
+		"\u00af\7\'\2\2\u00af\u00b0\7\23\2\2\u00b0\u00b1\7\13\2\2\u00b1\u00b2\5"+
+		"\20\t\2\u00b2\u00b3\7\f\2\2\u00b3\u00ba\3\2\2\2\u00b4\u00b5\7\'\2\2\u00b5"+
 		"\u00b6\5\22\n\2\u00b6\u00b7\7\t\2\2\u00b7\u00b8\7\r\2\2\u00b8\u00ba\3"+
 		"\2\2\2\u00b9\u00a2\3\2\2\2\u00b9\u00a7\3\2\2\2\u00b9\u00a9\3\2\2\2\u00b9"+
 		"\u00aa\3\2\2\2\u00b9\u00ab\3\2\2\2\u00b9\u00ac\3\2\2\2\u00b9\u00ad\3\2"+
@@ -1696,13 +1696,13 @@ public class MiniJavaParser extends Parser {
 		"\u00bc\f\16\2\2\u00bc\u00bd\7\36\2\2\u00bd\u00e3\5\20\t\17\u00be\u00bf"+
 		"\f\r\2\2\u00bf\u00c0\t\2\2\2\u00c0\u00e3\5\20\t\16\u00c1\u00c2\f\f\2\2"+
 		"\u00c2\u00c3\7!\2\2\u00c3\u00e3\5\20\t\r\u00c4\u00c5\f\13\2\2\u00c5\u00c6"+
-		"\7\"\2\2\u00c6\u00e3\5\20\t\f\u00c7\u00c8\f\3\2\2\u00c8\u00c9\7\'\2\2"+
-		"\u00c9\u00e3\5\20\t\4\u00ca\u00cb\f\23\2\2\u00cb\u00cc\7\13\2\2\u00cc"+
-		"\u00cd\5\20\t\2\u00cd\u00ce\7\f\2\2\u00ce\u00e3\3\2\2\2\u00cf\u00d0\f"+
-		"\22\2\2\u00d0\u00d1\7\33\2\2\u00d1\u00e3\7\34\2\2\u00d2\u00d3\f\21\2\2"+
-		"\u00d3\u00d4\7\33\2\2\u00d4\u00d5\5\22\n\2\u00d5\u00de\7\t\2\2\u00d6\u00db"+
-		"\5\20\t\2\u00d7\u00d8\7\21\2\2\u00d8\u00da\5\20\t\2\u00d9\u00d7\3\2\2"+
-		"\2\u00da\u00dd\3\2\2\2\u00db\u00d9\3\2\2\2\u00db\u00dc\3\2\2\2\u00dc\u00df"+
+		"\7\"\2\2\u00c6\u00e3\5\20\t\f\u00c7\u00c8\f\n\2\2\u00c8\u00c9\7#\2\2\u00c9"+
+		"\u00e3\5\20\t\13\u00ca\u00cb\f\23\2\2\u00cb\u00cc\7\13\2\2\u00cc\u00cd"+
+		"\5\20\t\2\u00cd\u00ce\7\f\2\2\u00ce\u00e3\3\2\2\2\u00cf\u00d0\f\22\2\2"+
+		"\u00d0\u00d1\7\33\2\2\u00d1\u00e3\7\34\2\2\u00d2\u00d3\f\21\2\2\u00d3"+
+		"\u00d4\7\33\2\2\u00d4\u00d5\5\22\n\2\u00d5\u00de\7\t\2\2\u00d6\u00db\5"+
+		"\20\t\2\u00d7\u00d8\7\21\2\2\u00d8\u00da\5\20\t\2\u00d9\u00d7\3\2\2\2"+
+		"\u00da\u00dd\3\2\2\2\u00db\u00d9\3\2\2\2\u00db\u00dc\3\2\2\2\u00dc\u00df"+
 		"\3\2\2\2\u00dd\u00db\3\2\2\2\u00de\u00d6\3\2\2\2\u00de\u00df\3\2\2\2\u00df"+
 		"\u00e0\3\2\2\2\u00e0\u00e1\7\r\2\2\u00e1\u00e3\3\2\2\2\u00e2\u00bb\3\2"+
 		"\2\2\u00e2\u00be\3\2\2\2\u00e2\u00c1\3\2\2\2\u00e2\u00c4\3\2\2\2\u00e2"+
